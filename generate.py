@@ -286,7 +286,7 @@ def create_tr():
     sy -= 4.5 * mm
     c.setFont(F, 6.5)
     c.setFillColor(ACCENT_GOLD)
-    c.drawCentredString(SIDEBAR_W / 2, sy, "Full Stack Developer | Game Dev | AI")
+    c.drawCentredString(SIDEBAR_W / 2, sy, "Full Stack Developer | Game Dev | AI Engineer")
     sy -= 2 * mm
 
     sy = sb_divider(c, sy)
@@ -392,7 +392,7 @@ def create_en():
     sy -= 4.5 * mm
     c.setFont(F, 6.5)
     c.setFillColor(ACCENT_GOLD)
-    c.drawCentredString(SIDEBAR_W / 2, sy, "Full Stack Developer | Game Dev | AI")
+    c.drawCentredString(SIDEBAR_W / 2, sy, "Full Stack Developer | Game Dev | AI Engineer")
     sy -= 2 * mm
 
     sy = sb_divider(c, sy)
