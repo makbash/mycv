@@ -280,9 +280,7 @@ def create_tr():
     # Name
     c.setFont(FB, 13)
     c.setFillColor(white)
-    c.drawCentredString(SIDEBAR_W / 2, sy, "MUSTAFA")
-    sy -= 5.5 * mm
-    c.drawCentredString(SIDEBAR_W / 2, sy, "AKBA\u015e")
+    c.drawCentredString(SIDEBAR_W / 2, sy, "MUSTAFA AKBAŞ")
     sy -= 4.5 * mm
     c.setFont(F, 6.5)
     c.setFillColor(ACCENT_GOLD)
@@ -292,7 +290,7 @@ def create_tr():
     sy = sb_divider(c, sy)
 
     # Contact
-    sy = sb_section(c, sy, "\u0130leti\u015fim")
+    sy = sb_section(c, sy, "İletişim")
     sy = sb_contact(c, sy, "Telefon", "(+90) 544 247 34 43")
     sy = sb_contact(c, sy, "E-posta", "mustafa@akbas.net")
     sy = sb_contact(c, sy, "Web", "mustafa.akbas.net")
@@ -377,7 +375,7 @@ def create_tr():
 def create_en():
     out = str(OUTPUT_DIR / "cv_en.pdf")
     c = canvas.Canvas(out, pagesize=A4)
-    c.setTitle("Mustafa Akbas - CV")
+    c.setTitle("Mustafa Akbaş - CV")
 
     draw_sidebar(c)
     sy = HEIGHT - 14 * mm
@@ -386,9 +384,7 @@ def create_en():
     # Name
     c.setFont(FB, 13)
     c.setFillColor(white)
-    c.drawCentredString(SIDEBAR_W / 2, sy, "MUSTAFA")
-    sy -= 5.5 * mm
-    c.drawCentredString(SIDEBAR_W / 2, sy, "AKBAS")
+    c.drawCentredString(SIDEBAR_W / 2, sy, "MUSTAFA AKBAŞ")
     sy -= 4.5 * mm
     c.setFont(F, 6.5)
     c.setFillColor(ACCENT_GOLD)
