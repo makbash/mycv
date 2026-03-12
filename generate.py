@@ -347,7 +347,7 @@ def create_tr():
     my = m_project(c, my,
         "Maystro - Generative AI Creative Platform",
         "Yapay zeka destekli g\u00f6rsel ve video \u00fcretim platformu",
-        "Python, FastAPI, React, TypeScript, PostgreSQL, PyTorch, HuggingFace, Stable Diffusion, ControlNet, LoRA",
+        "Python, FastAPI, React, TypeScript, PostgreSQL, SQLAlchemy, PyTorch, Diffusers, HuggingFace, Stable Diffusion, ControlNet, LoRA, Docker",
         "AI g\u00f6rsel \u00fcretimi, inpainting/outpainting, node tabanl\u0131 i\u015f ak\u0131\u015f\u0131 edit\u00f6r\u00fc (104+ node), video st\u00fcdyosu, karakter st\u00fcdyosu, \u00e7oklu kullan\u0131c\u0131 deste\u011fi")
     my = m_project(c, my,
         "SurvivalCraft - Multiplayer Survival Oyunu",
@@ -451,7 +451,7 @@ def create_en():
     my = m_project(c, my,
         "Maystro - Generative AI Creative Platform",
         "AI-powered image and video generation platform",
-        "Python, FastAPI, React, TypeScript, PostgreSQL, PyTorch, HuggingFace, Stable Diffusion, ControlNet, LoRA",
+        "Python, FastAPI, React, TypeScript, PostgreSQL, SQLAlchemy, PyTorch, Diffusers, HuggingFace, Stable Diffusion, ControlNet, LoRA, Docker",
         "AI image generation, inpainting/outpainting, node-based workflow editor (104+ nodes), video studio, character studio, multi-user support",
         lang="en")
     my = m_project(c, my,
