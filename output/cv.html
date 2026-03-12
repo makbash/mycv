@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mustafa Akbaş - CV</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Calibri,sans-serif;background:#f0f0f0;display:flex;justify-content:center;padding:20px 10px}
+  .page{display:flex;max-width:210mm;width:100%;background:#fff;box-shadow:0 2px 20px rgba(0,0,0,.15);min-height:auto}
+
+  /* Sidebar */
+  .sidebar{width:240px;min-width:240px;background:#1B2838;color:#EAEAEA;padding:30px 20px 30px}
+  .photo-wrap{text-align:center;margin-bottom:16px}
+  .photo-wrap img{width:130px;height:130px;border-radius:50%;object-fit:cover;border:2px solid #D4A843}
+  .sidebar h1{text-align:center;font-size:16px;letter-spacing:1px;margin-bottom:4px}
+  .sidebar .subtitle{text-align:center;font-size:10px;color:#D4A843;margin-bottom:10px;letter-spacing:.5px}
+  .sb-divider{border:0;border-top:1px solid #243447;margin:10px 0}
+  .sb-section{font-size:10px;font-weight:700;color:#D4A843;text-transform:uppercase;letter-spacing:1px;margin:14px 0 4px;padding-bottom:4px;border-bottom:1px solid #D4A843;display:inline-block}
+  .sb-contact{margin-bottom:8px}
+  .sb-contact .label{font-size:9px;font-weight:700;color:#B0B8C4;text-transform:uppercase;letter-spacing:.5px}
+  .sb-contact .value{font-size:11px;color:#EAEAEA}
+  .sb-contact a{color:#EAEAEA;text-decoration:none}
+  .sb-contact a:hover{color:#D4A843}
+  .sb-skill-group{margin-bottom:6px}
+  .sb-skill-group .title{font-size:10px;font-weight:700;color:#EAEAEA;margin-bottom:2px}
+  .sb-skill-group .items{font-size:9.5px;color:#B0B8C4;line-height:1.5}
+  .sb-lang{margin-bottom:8px;display:flex;align-items:center;gap:8px}
+  .sb-lang .name{font-size:11px}
+  .sb-lang .level{font-size:9px;color:#B0B8C4}
+  .dots{display:flex;gap:3px}
+  .dots span{width:8px;height:8px;border-radius:50%;background:#243447}
+  .dots span.filled{background:#D4A843}
+
+  /* Main */
+  .main{flex:1;padding:28px 28px 28px 32px}
+  .summary{font-size:11.5px;color:#444;line-height:1.6;margin-bottom:16px}
+  .section-title{font-size:14px;font-weight:700;color:#1B2838;text-transform:uppercase;letter-spacing:.5px;margin-top:18px;margin-bottom:6px;padding-bottom:4px;border-bottom:2px solid #D4A843;display:flex;align-items:center}
+  .section-title::after{content:'';flex:1;height:1px;background:#ddd;margin-left:0}
+  .section-title.first{margin-top:0}
+
+  .work-item{margin-bottom:12px}
+  .work-header{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap}
+  .work-title{font-size:12px;font-weight:700;color:#1A1A1A}
+  .work-date{font-size:10px;color:#5B9BD5}
+  .work-company{font-size:11px;color:#777;margin-top:1px}
+  .work-bullets{margin:4px 0 0 14px;list-style:disc;color:#444}
+  .work-bullets li{font-size:10px;line-height:1.6;color:#444}
+
+  .project-item{margin-bottom:12px}
+  .project-name{font-size:12px;font-weight:700;color:#1A1A1A}
+  .project-sub{font-size:10px;font-style:italic;color:#777;margin-top:1px}
+  .project-detail{font-size:10px;color:#444;margin-top:3px;line-height:1.5}
+  .project-detail strong{color:#1A1A1A}
+
+  .edu-item{margin-bottom:10px}
+  .edu-header{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap}
+  .edu-degree{font-size:12px;font-weight:700;color:#1A1A1A}
+  .edu-date{font-size:10px;color:#5B9BD5}
+  .edu-school{font-size:10px;font-style:italic;color:#777;margin-top:1px}
+
+  /* Language toggle */
+  .lang-toggle{position:fixed;top:16px;right:16px;z-index:100;display:flex;background:#1B2838;border-radius:20px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+  .lang-btn{padding:6px 16px;font-size:11px;font-weight:700;color:#B0B8C4;cursor:pointer;border:none;background:transparent;letter-spacing:.5px;transition:all .2s}
+  .lang-btn.active{background:#D4A843;color:#1B2838}
+  .lang-btn:hover:not(.active){color:#EAEAEA}
+
+  /* Print */
+  @media print{
+    body{padding:0;background:#fff}
+    .page{box-shadow:none;max-width:100%}
+    .lang-toggle{display:none}
+    .sidebar{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+  /* Mobile */
+  @media(max-width:700px){
+    .page{flex-direction:column}
+    .sidebar{width:100%;min-width:100%;padding:20px}
+    .main{padding:20px}
+    .lang-toggle{top:auto;bottom:16px;right:50%;transform:translateX(50%)}
+  }
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+  <button class="lang-btn active" onclick="setLang('tr')">TR</button>
+  <button class="lang-btn" onclick="setLang('en')">EN</button>
+</div>
+
+<div class="page">
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="photo-wrap">
+      <img src="https://mustafa.akbas.net/assets/photo.jpg" alt="Mustafa Akbaş"
+           onerror="this.style.display='none'">
+    </div>
+    <h1>MUSTAFA AKBAŞ</h1>
+    <div class="subtitle">Full Stack Developer | Game Dev | AI Engineer</div>
+    <hr class="sb-divider">
+
+    <div class="sb-section" data-tr="İLETİŞİM" data-en="CONTACT">İLETİŞİM</div>
+    <div class="sb-contact"><div class="label" data-tr="TELEFON" data-en="PHONE">TELEFON</div><div class="value">(+90) 544 247 34 43</div></div>
+    <div class="sb-contact"><div class="label" data-tr="E-POSTA" data-en="EMAIL">E-POSTA</div><div class="value"><a href="mailto:mustafa@akbas.net">mustafa@akbas.net</a></div></div>
+    <div class="sb-contact"><div class="label">WEB</div><div class="value"><a href="https://mustafa.akbas.net" target="_blank">mustafa.akbas.net</a></div></div>
+    <div class="sb-contact"><div class="label">GITHUB</div><div class="value"><a href="https://github.com/makbash" target="_blank">github.com/makbash</a></div></div>
+    <div class="sb-contact"><div class="label" data-tr="KONUM" data-en="LOCATION">KONUM</div><div class="value" data-tr="İstanbul, Türkiye" data-en="Istanbul, Turkey">İstanbul, Türkiye</div></div>
+
+    <hr class="sb-divider">
+    <div class="sb-section" data-tr="BECERİLER" data-en="SKILLS">BECERİLER</div>
+    <div class="sb-skill-group"><div class="title">Backend</div><div class="items">NodeJS · PHP · Python · C++ · FastAPI</div></div>
+    <div class="sb-skill-group"><div class="title">Frontend</div><div class="items">React · TypeScript · JavaScript · Angular</div></div>
+    <div class="sb-skill-group"><div class="title" data-tr="Veritabanı" data-en="Database">Veritabanı</div><div class="items">PostgreSQL · MySQL · MongoDB · Redis</div></div>
+    <div class="sb-skill-group"><div class="title">AI / ML</div><div class="items">PyTorch · HuggingFace · Stable Diffusion · ControlNet</div></div>
+    <div class="sb-skill-group"><div class="title" data-tr="Oyun" data-en="Game Dev">Oyun</div><div class="items">UE5 · C++ · Blueprint · Niagara</div></div>
+
+    <hr class="sb-divider">
+    <div class="sb-section" data-tr="DİLLER" data-en="LANGUAGES">DİLLER</div>
+    <div class="sb-lang"><span class="name" data-tr="Türkçe" data-en="Turkish">Türkçe</span><span class="level" data-tr="(Anadil)" data-en="(Native)">(Anadil)</span><div class="dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span></div></div>
+    <div class="sb-lang"><span class="name" data-tr="İngilizce" data-en="English">İngilizce</span><span class="level" data-tr="(Orta)" data-en="(Intermediate)">(Orta)</span><div class="dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span><span></span></div></div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+    <div class="summary" data-tr="2010'dan bu yana profesyonel olarak yazılım geliştirme yapmaktayım. Java ile başlayan serüvenim PHP, NodeJS ve ReactJS ile devam etmiştir. Web geliştirmenin yanı sıra C++ ve Unreal Engine ile oyun geliştirme, Python ve PyTorch ile yapay zeka projeleri üzerinde çalışmaktayım." data-en="Professional software developer since 2010. Started with Java, then expanded to PHP, NodeJS and ReactJS. Beyond web development, I work on game development with C++ and Unreal Engine, as well as AI projects using Python and PyTorch.">
+      2010'dan bu yana profesyonel olarak yazılım geliştirme yapmaktayım. Java ile başlayan serüvenim PHP, NodeJS ve ReactJS ile devam etmiştir. Web geliştirmenin yanı sıra C++ ve Unreal Engine ile oyun geliştirme, Python ve PyTorch ile yapay zeka projeleri üzerinde çalışmaktayım.
+    </div>
+
+    <!-- İŞ DENEYİMİ -->
+    <div class="section-title first" data-tr="İŞ DENEYİMİ" data-en="WORK EXPERIENCE">İŞ DENEYİMİ</div>
+
+    <div class="work-item">
+      <div class="work-header"><span class="work-title" data-tr="Yazılım Geliştirici" data-en="Software Developer">Yazılım Geliştirici</span><span class="work-date" data-tr="Ocak 2022 - Halen" data-en="Jan 2022 - Present">Ocak 2022 - Halen</span></div>
+      <div class="work-company">Icrypex Bilişim A.Ş. - İstanbul - Full Stack</div>
+      <ul class="work-bullets">
+        <li data-tr="Kripto para borsası backend ve frontend geliştirme" data-en="Cryptocurrency exchange backend and frontend development">Kripto para borsası backend ve frontend geliştirme</li>
+        <li data-tr="React, NodeJS ve mikroservis mimarisi ile ölçeklenebilir sistemler" data-en="Scalable systems with React, NodeJS and microservice architecture">React, NodeJS ve mikroservis mimarisi ile ölçeklenebilir sistemler</li>
+        <li data-tr="REST API tasarımı, veritabanı optimizasyonu ve performans iyileştirmeleri" data-en="REST API design, database optimization and performance improvements">REST API tasarımı, veritabanı optimizasyonu ve performans iyileştirmeleri</li>
+      </ul>
+    </div>
+
+    <div class="work-item">
+      <div class="work-header"><span class="work-title" data-tr="Yazılım Geliştirici" data-en="Software Developer">Yazılım Geliştirici</span><span class="work-date" data-tr="Aralık 2017 - Ocak 2022" data-en="Dec 2017 - Jan 2022">Aralık 2017 - Ocak 2022</span></div>
+      <div class="work-company">Digidea Dijital - İstanbul - Full Stack</div>
+      <ul class="work-bullets">
+        <li data-tr="Kurumsal web uygulamaları ve e-ticaret platformları geliştirme" data-en="Enterprise web applications and e-commerce platform development">Kurumsal web uygulamaları ve e-ticaret platformları geliştirme</li>
+        <li data-tr="PHP, NodeJS, React ve Angular ile çoklu proje yönetimi" data-en="Multi-project management with PHP, NodeJS, React and Angular">PHP, NodeJS, React ve Angular ile çoklu proje yönetimi</li>
+      </ul>
+    </div>
+
+    <div class="work-item">
+      <div class="work-header"><span class="work-title" data-tr="Yazılım Geliştirici / Kurucu" data-en="Software Developer / Founder">Yazılım Geliştirici / Kurucu</span><span class="work-date" data-tr="Nisan 2015 - Aralık 2017" data-en="Apr 2015 - Dec 2017">Nisan 2015 - Aralık 2017</span></div>
+      <div class="work-company">Avrasya Dijital - İstanbul - Full Stack</div>
+      <ul class="work-bullets">
+        <li data-tr="Dijital ajans kurulumu ve müşteri projelerinin uçtan uca yönetimi" data-en="Digital agency setup and end-to-end client project management">Dijital ajans kurulumu ve müşteri projelerinin uçtan uca yönetimi</li>
+        <li data-tr="Web uygulama geliştirme, SEO ve dijital pazarlama çözümleri" data-en="Web application development, SEO and digital marketing solutions">Web uygulama geliştirme, SEO ve dijital pazarlama çözümleri</li>
+      </ul>
+    </div>
+
+    <div class="work-item">
+      <div class="work-header"><span class="work-title" data-tr="Yazılım Geliştirici" data-en="Software Developer">Yazılım Geliştirici</span><span class="work-date" data-tr="Ekim 2010 - Mart 2014" data-en="Oct 2010 - Mar 2014">Ekim 2010 - Mart 2014</span></div>
+      <div class="work-company">BRD - İstanbul - Full Stack</div>
+      <ul class="work-bullets">
+        <li data-tr="Java ve PHP tabanlı kurumsal yazılım geliştirme" data-en="Enterprise software development with Java and PHP">Java ve PHP tabanlı kurumsal yazılım geliştirme</li>
+        <li data-tr="Veritabanı tasarımı ve sistem entegrasyonları" data-en="Database design and system integrations">Veritabanı tasarımı ve sistem entegrasyonları</li>
+      </ul>
+    </div>
+
+    <!-- KİŞİSEL PROJELER -->
+    <div class="section-title" data-tr="KİŞİSEL PROJELER" data-en="PERSONAL PROJECTS">KİŞİSEL PROJELER</div>
+
+    <div class="project-item">
+      <div class="project-name">Maystro - Generative AI Creative Platform</div>
+      <div class="project-sub" data-tr="Yapay zeka destekli görsel ve video üretim platformu" data-en="AI-powered image and video generation platform">Yapay zeka destekli görsel ve video üretim platformu</div>
+      <div class="project-detail"><strong data-tr="Teknolojiler:" data-en="Technologies:">Teknolojiler:</strong> Python, FastAPI, React, TypeScript, PostgreSQL, PyTorch, HuggingFace, Stable Diffusion, ControlNet, LoRA</div>
+      <div class="project-detail"><strong data-tr="Özellikler:" data-en="Features:">Özellikler:</strong> <span data-tr="AI görsel üretimi, inpainting/outpainting, node tabanlı iş akışı editörü (104+ node), video stüdyosu, karakter stüdyosu, çoklu kullanıcı desteği" data-en="AI image generation, inpainting/outpainting, node-based workflow editor (104+ nodes), video studio, character studio, multi-user support">AI görsel üretimi, inpainting/outpainting, node tabanlı iş akışı editörü (104+ node), video stüdyosu, karakter stüdyosu, çoklu kullanıcı desteği</span></div>
+    </div>
+
+    <div class="project-item">
+      <div class="project-name">SurvivalCraft - Multiplayer Survival <span data-tr="Oyunu" data-en="Game">Oyunu</span></div>
+      <div class="project-sub" data-tr="Unreal Engine 5.6 ile geliştirilen multiplayer hayatta kalma oyunu" data-en="Multiplayer survival game built with Unreal Engine 5.6">Unreal Engine 5.6 ile geliştirilen multiplayer hayatta kalma oyunu</div>
+      <div class="project-detail"><strong data-tr="Teknolojiler:" data-en="Technologies:">Teknolojiler:</strong> C++, Unreal Engine 5.6, Blueprint, Steam Multiplayer (AdvancedSessions), Niagara VFX</div>
+      <div class="project-detail"><strong data-tr="Özellikler:" data-en="Features:">Özellikler:</strong> <span data-tr="Yapı sistemi, envanter ve crafting, savaş sistemi, hayvan evcilleştirme ve binme, dinamik hava/mevsim sistemi, kabile sistemi, kayıt/yükleme, FPS/TPS kamera" data-en="Building system, inventory and crafting, combat system (melee/ranged), animal taming and riding, dynamic weather/season system, tribe system, save/load, FPS/TPS camera">Yapı sistemi, envanter ve crafting, savaş sistemi, hayvan evcilleştirme ve binme, dinamik hava/mevsim sistemi, kabile sistemi, kayıt/yükleme, FPS/TPS kamera</span></div>
+    </div>
+
+    <!-- EĞİTİM -->
+    <div class="section-title" data-tr="EĞİTİM" data-en="EDUCATION">EĞİTİM</div>
+
+    <div class="edu-item">
+      <div class="edu-header"><span class="edu-degree" data-tr="Yazılım Mühendisliği" data-en="Software Engineering">Yazılım Mühendisliği</span><span class="edu-date">2022 - 2026</span></div>
+      <div class="edu-school" data-tr="Netkent Akdeniz Araştırma ve Bilim Üniversitesi" data-en="Netkent Mediterranean Research and Science University">Netkent Akdeniz Araştırma ve Bilim Üniversitesi</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-header"><span class="edu-degree" data-tr="Bilgisayar Programcılığı" data-en="Computer Programming">Bilgisayar Programcılığı</span><span class="edu-date">2008 - 2010</span></div>
+      <div class="edu-school" data-tr="Gaziosmanpaşa Üniversitesi, Tokat" data-en="Gaziosmanpasa University, Tokat">Gaziosmanpaşa Üniversitesi, Tokat</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-header"><span class="edu-degree" data-tr="Orman Mühendisliği" data-en="Forest Engineering">Orman Mühendisliği</span><span class="edu-date">2004 - 2008</span></div>
+      <div class="edu-school" data-tr="İstanbul Üniversitesi" data-en="Istanbul University">İstanbul Üniversitesi</div>
+    </div>
+  </div>
+</div>
+
+<script>
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent.trim().toLowerCase() === lang));
+  document.querySelectorAll('[data-tr][data-en]').forEach(el => {
+    el.textContent = el.getAttribute('data-' + lang);
+  });
+}
+// URL hash support: cv.html#en
+if (location.hash === '#en') setLang('en');
+</script>
+</body>
+</html>
